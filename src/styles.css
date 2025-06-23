@@ -27,3 +27,7 @@ border: 1px solid blueviolet;
 color: blueviolet;
 cursor: pointer;
 }
+.error-msg{
+    color: red;
+    font-size: 14px;
+}

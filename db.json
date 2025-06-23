@@ -11,6 +11,80 @@
       "name": "Naina Singh",
       "email": "abcd@gmail.com",
       "password": "AABC@123"
+    },
+    {
+      "id": "60fa",
+      "name": "Atul Singh",
+      "password": "At@123",
+      "email": "test@gmail.com"
+    },
+    {
+      "id": "0d46",
+      "name": "Kashi",
+      "password": "Kas@123",
+      "email": "scs"
+    },
+    {
+      "id": "fe0d",
+      "name": "Kamm",
+      "password": "Kam@124",
+      "email": "ss@gmail"
+    }
+  ],
+  "products": [
+    {
+      "id": "0272",
+      "productName": "Wireless Earbuds",
+      "productPrice": "9000",
+      "productColor": "White",
+      "productCategory": "Electronics",
+      "productDescription": "Compact wireless earbuds with noise isolation and charging case.\n ",
+      "productImageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+      "id": "d9a1",
+      "productName": "Men\\'s Casual Shirt",
+      "productPrice": "1499",
+      "productColor": "Olive Green",
+      "productCategory": "Apparel",
+      "productDescription": "100% cotton slim fit casual shirt for men, perfect for summer.\n ",
+      "productImageUrl": "https://dummyimage.com/400x400/green/fff&text=Shirt"
+    },
+    {
+      "id": "9083",
+      "productName": "Wooden Office Desk",
+      "productPrice": "7999",
+      "productColor": "Walnut Brown",
+      "productCategory": "Furniture",
+      "productDescription": "Ergonomic wooden office desk suitable for home and corporate use.'\n ",
+      "productImageUrl": "https://dummyimage.com/400x400/brown/fff&text=Desk"
+    },
+    {
+      "id": "01bd",
+      "productName": "Wireless Bluetooth Headphones",
+      "productPrice": "1999",
+      "productColor": "Pink",
+      "productCategory": "Electronics",
+      "productDescription": "High-quality wireless Bluetooth headphones with noise cancellation and 20 hours battery life.",
+      "productImageUrl": "https://dummyimage.com/400x400/000/fff&text=Headphones"
+    },
+    {
+      "id": "0274",
+      "productName": "Wireless Earbuds",
+      "productPrice": "9800",
+      "productColor": "Black",
+      "productCategory": "Electronics",
+      "productDescription": "Compact wireless earbuds with noise isolation and charging case.\n ",
+      "productImageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+      "id": "d9a2",
+      "productName": "Men\\'s Casual Shirt",
+      "productPrice": "1299",
+      "productColor": "Green",
+      "productCategory": "Apparel",
+      "productDescription": "100% cotton slim fit casual shirt for men, perfect for summer.\n ",
+      "productImageUrl": "https://dummyimage.com/400x400/green/fff&text=Shirt"
     }
   ]
 }

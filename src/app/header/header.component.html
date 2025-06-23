@@ -1,21 +1,22 @@
 <nav class="nav">
-<h1>E-Commerce</h1>
-<div class="nav-search">
-    <input type="text" placeholder="Search for product"/>
-    <button>Search</button>
-</div>
-<ul>
-    <li>
-        <a routerLink="" routerLinkActive="active">Home</a>
-    </li>
-    <li>
-        <a routerLink="seller-auth" routerLinkActive="active">Seller</a>
-    </li>
-    <li>
-        <a href="#">Login</a> 
-    </li>
-    <li>
-        <a href="#">Cart(0)</a>
-    </li>
-</ul>
+    <h1><a routerLink="">E-Commerce</a></h1>
+
+    <div *ngIf="areaName==='default'" class="nav-search">
+        <input type="text" placeholder="Search for product" />
+        <button>Search</button>
+    </div>
+    <div [ngSwitch]="areaName">
+        <ul *ngSwitchCase="'default'">
+            <li><a routerLink="" routerLinkActive="active">Home</a></li>
+            <li><a routerLink="seller-auth" routerLinkActive="active">Seller</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Cart(0)</a></li>
+        </ul>
+        <ul *ngSwitchCase="'seller'">
+            <li><a routerLink="seller-home" routerLinkActive="active">List</a></li>
+            <li><a routerLink="seller-add-product" routerLinkActive="active">Add Product</a></li>
+            <li style="cursor: pointer;"><a (click)="logout()">Logout</a></li>
+            <li><b>{{sellerName | titlecase}}</b></li>
+        </ul>
+    </div>
 </nav>

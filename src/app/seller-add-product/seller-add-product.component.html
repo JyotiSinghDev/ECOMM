@@ -1,0 +1,34 @@
+<div class="add-product">
+    <h1>Add New Product</h1>
+    <form #addProduct="ngForm" (submit)="addNewProduct(addProduct)" class="common-form">
+        <input class="form-input" type="text" [(ngModel)]="product.productName" name="productName" placeholder="Enter Product Name" required
+            #productNameCtrl="ngModel" />
+        <div *ngIf="productNameCtrl.invalid && productNameCtrl.touched" class="error-msg">
+            Product Name is required.
+        </div>
+        <input class="form-input" type="text" [(ngModel)]="product.productPrice" name="productPrice" placeholder="Enter Product Price" required
+            #productPriceCtrl="ngModel" />
+        <div *ngIf="productPriceCtrl.invalid && productPriceCtrl.touched" class="error-msg">
+            Product Price is required.
+        </div>
+        <input class="form-input" type="text" [(ngModel)]="product.productColor" name="productColor" placeholder="Enter Product Color" required
+            #productColorCtrl="ngModel" />
+        <div *ngIf="productColorCtrl.invalid && productColorCtrl.touched" class="error-msg">
+            Product Color is required.
+        </div>
+        <input class="form-input" type="text" [(ngModel)]="product.productCategory" name="productCategory" placeholder="Enter Product Category"
+            required #productCategoryCtrl="ngModel" />
+        <div *ngIf="productCategoryCtrl.invalid && productCategoryCtrl.touched" class="error-msg">
+            Product Category is required.
+        </div>
+        <textarea class="form-input" [(ngModel)]="product.productDescription" name="productDescription" placeholder="Enter Product Description" required
+            #productDescCtrl="ngModel"></textarea>
+
+        <input class="form-input" type="text" [(ngModel)]="product.productImageUrl" name="productImageUrl" placeholder="Enter Product Url" required
+            #productImageCtrl="ngModel" />
+        <div *ngIf="productImageCtrl.invalid && productImageCtrl.touched" class="error-msg">
+            Product Image is required.
+        </div>
+         <button class="form-button" type="submit" [disabled]="addProduct.invalid">Add Product</button>
+    </form>
+</div>

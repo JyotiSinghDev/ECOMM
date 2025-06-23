@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ProductService } from '../services/product.service';
+import { Observable } from 'rxjs';
+import { Product } from '../_model/product';
+
 
 @Component({
   selector: 'app-home',
@@ -10,3 +14,4 @@ import { Component } from '@angular/core';
 export class HomeComponent {
 
 }
+

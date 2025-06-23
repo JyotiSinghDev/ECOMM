@@ -2,3 +2,10 @@
     text-align: center;
     margin-top: 80px;
 }
+.seller-auth-link{
+    cursor: pointer;
+    color: blueviolet;
+    font-size: 14px;
+    margin-top: 20px;
+    text-align: left;
+}

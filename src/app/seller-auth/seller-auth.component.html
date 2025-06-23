@@ -1,11 +1,59 @@
 <div class="container">
+    <!-----------------------------------Sign Up Area------------------------------>
+    @if (!isSellerLogin) {
     <div class="signUp">
-    <h1>Sign-Up</h1>
-    <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)" class="common-form">
-        <input class="form-input" type="text" ngModel name="name" placeholder="Enter Name"/>
-        <input class="form-input" type="password" ngModel name="password" placeholder="Enter Password"/>
-        <input class="form-input" type="text" ngModel name="email" placeholder="Enter Email"/>
-        <button class="form-button">Sign Up</button>
-    </form>
+        <h1>Seller Sign-Up</h1>
+        <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp)" class="common-form">
+            <input class="form-input" type="text" ngModel name="name" placeholder="Enter Name" required
+                #nameCtrl="ngModel" />
+            <div *ngIf="nameCtrl.invalid && nameCtrl.touched" class="error-msg">
+                Name is required.
+            </div>
+            <input class="form-input" type="password" ngModel name="password" placeholder="Enter Password" required
+                minlength="6" #pwdCtrl="ngModel" />
+            <div *ngIf="pwdCtrl.invalid && pwdCtrl.touched" class="error-msg">
+                <div *ngIf="pwdCtrl.errors?.['required']">Password is required.</div>
+                <div *ngIf="pwdCtrl.errors?.['minlength']">
+                    Password must be at least 6 characters.
+                </div>
+            </div>
+            <input class="form-input" type="email" ngModel name="email" placeholder="Enter Email" required email
+                #emailCtrl="ngModel" />
+            <div *ngIf="emailCtrl.invalid && emailCtrl.touched" class="error-msg">
+                <div *ngIf="emailCtrl.errors?.['required']">Email is required.</div>
+                <div *ngIf="emailCtrl.errors?.['email']">Invalid email format.</div>
+
+            </div>
+            <button class="form-button" type="submit" [disabled]="sellerSignUp.invalid">Sign Up</button>
+            <a class="seller-auth-link" (click)="showSellerLogin()">Already have an account? Click to Login.</a>
+        </form>
     </div>
+    }
+    @else{
+    <!------------------------------------------Login Area-------------------------->
+    <div class="signUp">
+        <h1> Seller Login</h1>
+        
+        <form #sellerLogin="ngForm" (ngSubmit)="login(sellerLogin)" class="common-form">
+            <p *ngIf="!loginStatus" class="error-msg">{{loginError}}</p>
+            <input class="form-input" type="email" ngModel name="email" placeholder="Enter Email" required email
+                #emailCtrl="ngModel" />
+            <div *ngIf="emailCtrl.invalid && emailCtrl.touched" class="error-msg">
+                <div *ngIf="emailCtrl.errors?.['required']">Email is required.</div>
+                <div *ngIf="emailCtrl.errors?.['email']">Invalid email format.</div>
+            </div>
+            <input class="form-input" type="password" ngModel name="password" placeholder="Enter Password" required
+                minlength="6" #pwdCtrl="ngModel" />
+            <div *ngIf="pwdCtrl.invalid && pwdCtrl.touched" class="error-msg">
+                <div *ngIf="pwdCtrl.errors?.['required']">Password is required.</div>
+                <div *ngIf="pwdCtrl.errors?.['minlength']">
+                    Password must be at least 6 characters.
+                </div>
+            </div>
+            <button class="form-button" type="submit" [disabled]="sellerLogin.invalid">Login</button>
+            <a class="seller-auth-link" (click)="showSellerLogin()">Don't have an Account click to Sign Up.</a>
+           
+        </form>
+    </div>
+    }
 </div>
